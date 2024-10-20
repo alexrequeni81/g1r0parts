@@ -1,22 +1,22 @@
 let clientes = [
     {
-        "nombre": "Juan Pérez",
-        "correo": "juan.perez@email.com",
+        "nombre": "admin",
+        "correo": "admin@email.com",
         "direcciones": [
             "Calle Mayor 123, Madrid",
             "Avenida Principal 45, Barcelona"
         ]
     },
     {
-        "nombre": "María García",
-        "correo": "maria.garcia@email.com",
+        "nombre": "usuario1",
+        "correo": "usuario1@email.com",
         "direcciones": [
             "Plaza España 67, Sevilla"
         ]
     },
     {
-        "nombre": "Carlos Rodríguez",
-        "correo": "carlos.rodriguez@email.com",
+        "nombre": "usuario2",
+        "correo": "usuario2@email.com",
         "direcciones": [
             "Calle del Sol 89, Valencia",
             "Paseo Marítimo 12, Alicante",
