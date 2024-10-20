@@ -261,3 +261,25 @@ td:nth-child(4) {
     text-align: center;
     vertical-align: middle;
 }
+
+#nuevoPedidoBtn, #cerrarSesionBtn {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+#nuevoPedidoBtn {
+    background-color: #28a745;
+}
+
+#cerrarSesionBtn {
+    background-color: #dc3545;
+}
+
+#nuevoPedidoBtn:hover {
+    background-color: #218838;
+}
+
+#cerrarSesionBtn:hover {
+    background-color: #c82333;
+}
