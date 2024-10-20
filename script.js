@@ -282,17 +282,41 @@ document.querySelector('.close').addEventListener('click', function() {
     document.getElementById('resumenModal').style.display = 'none';
 });
 
-// Cerrar el modal cuando se hace clic fuera de él
+// Modifica la función window.addEventListener para cerrar también el nuevo modal
 window.addEventListener('click', function(event) {
     if (event.target == document.getElementById('resumenModal')) {
         document.getElementById('resumenModal').style.display = 'none';
     }
+    if (event.target == document.getElementById('finalizarPedidoModal')) {
+        document.getElementById('finalizarPedidoModal').style.display = 'none';
+    }
 });
 
-// Confirmar el pedido
+// Modifica la función de confirmar pedido
 document.getElementById('confirmarPedido').addEventListener('click', function() {
     // Aquí puedes añadir la lógica para enviar la solicitud
     alert('Pedido confirmado y enviado');
     document.getElementById('resumenModal').style.display = 'none';
-    // Aquí podrías resetear el formulario o redirigir a otra página
+    document.getElementById('finalizarPedidoModal').style.display = 'block';
 });
+
+// Añade eventos para los nuevos botones
+document.getElementById('nuevoPedidoBtn').addEventListener('click', function() {
+    document.getElementById('finalizarPedidoModal').style.display = 'none';
+    resetearFormulario();
+});
+
+document.getElementById('cerrarSesionBtn').addEventListener('click', function() {
+    // Limpia el almacenamiento local y redirige al inicio
+    localStorage.removeItem('correoUsuario');
+    localStorage.removeItem('nombreUsuario');
+    window.location.href = 'index.html';
+});
+
+// Función para resetear el formulario
+function resetearFormulario() {
+    const compraBody = document.getElementById('compraBody');
+    compraBody.innerHTML = '';
+    addRow(); // Añade una fila vacía
+    document.getElementById('enviarSolicitud').style.display = 'none';
+}
