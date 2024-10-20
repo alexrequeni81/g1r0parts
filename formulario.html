@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G1R0PART$ - Formulario de Compra</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>G1R0PART$</h1>
+        <h2>Global Shipping Solutions</h2>
+        <h3>Formulario de Compra</h3>
+        <div class="info-row">
+            <input type="text" id="nombreSolicitante" placeholder="Nombre del solicitante" required>
+            <input type="text" id="direccionEntrega" placeholder="Dirección de entrega" required>
+        </div>
+        <table id="compraTable">
+            <thead>
+                <tr>
+                    <th>Referencia</th>
+                    <th>Descripción</th>
+                    <th>Cantidad</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="compraBody">
+                <!-- Las filas se añadirán dinámicamente con JavaScript -->
+            </tbody>
+        </table>
+        <button id="addRow">Añadir artículo</button>
+        <button id="enviarSolicitud" style="display: none;">Enviar solicitud de pedido</button>
+    </div>
+
+    <!-- Modal de resumen -->
+    <div id="resumenModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Resumen del pedido</h2>
+            <div id="resumenContenido"></div>
+            <button id="confirmarPedido">Confirmar pedido</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

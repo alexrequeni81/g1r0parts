@@ -1,0 +1,263 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin: 0;
+}
+
+h1 {
+    color: #007bff;
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+h2 {
+    color: #666;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+form, table {
+    width: 100%;
+}
+
+input, button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed; /* Esto ayuda a controlar mejor el ancho de las columnas */
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    overflow: hidden; /* Evita que el contenido se desborde */
+    text-overflow: ellipsis; /* Muestra '...' si el contenido es demasiado largo */
+    white-space: nowrap; /* Evita que el texto se envuelva */
+}
+
+th {
+    background-color: #f2f2f2;
+    text-align: center; /* Centra el texto horizontalmente */
+    vertical-align: middle; /* Centra el texto verticalmente */
+    font-weight: bold; /* Hace el texto más grueso */
+    padding: 12px 5px; /* Aumenta un poco el padding vertical */
+}
+
+/* Ajusta el ancho de la columna de Referencia */
+th:first-child,
+td:first-child {
+    width: 120px; /* Ajusta este valor según sea necesario para 14 caracteres */
+}
+
+/* Ajusta el ancho de la columna de Descripción */
+th:nth-child(2),
+td:nth-child(2) {
+    width: auto; /* Esto hará que tome el espacio restante */
+}
+
+/* Ajusta el ancho de la columna de Cantidad */
+th:nth-child(3),
+td:nth-child(3) {
+    width: 90px; /* Ajusta este valor según sea necesario */
+}
+
+/* Ajusta el ancho de la columna de Acciones */
+th:nth-child(4),
+td:nth-child(4) {
+    width: 80px; /* Ajusta este valor según sea necesario */
+}
+
+/* Asegúrate de que los inputs dentro de las celdas se ajusten correctamente */
+td input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.quantity-control {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+    
+
+.quantity-control button {
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1;
+    border: 1px solid #ddd;
+    background-color: #f8f9fa;
+    color: #495057;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quantity-control span {
+    min-width: 30px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0 5px;
+    line-height: 25px; /* Ajusta esto para alinear verticalmente con los botones */
+    display: inline-block; /* Esto ayuda a controlar mejor la alineación */
+    vertical-align: middle; /* Alinea verticalmente con los botones */
+}
+
+/* Ajusta el hover de los botones de cantidad */
+.quantity-control button:hover {
+    background-color: #e9ecef;
+}
+
+/* Asegúrate de que los botones no cambien de tamaño al hacer hover */
+.quantity-control button:hover,
+.quantity-control button:focus {
+    outline: none;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.info-row input,
+.info-row select {
+    width: 48%; /* Ajusta este valor según sea necesario */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 16px; /* Asegura que el texto tenga el mismo tamaño */
+    height: 40px; /* Establece una altura fija para ambos elementos */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+}
+
+/* Estilo específico para el select para que se parezca más al input */
+.info-row select {
+    appearance: none; /* Elimina los estilos nativos del navegador */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 20px auto;
+    padding-right: 30px; /* Espacio para la flecha del select */
+}
+
+.resultados-busqueda {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    max-height: 300px;
+    width: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.resultados-busqueda div {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.resultados-busqueda div:last-child {
+    border-bottom: none;
+}
+
+.resultados-busqueda div:hover {
+    background-color: #f0f0f0;
+}
+
+.resultados-busqueda mark {
+    background-color: yellow;
+    padding: 0;
+}
+
+#enviarSolicitud {
+    margin-top: 20px;
+    background-color: #28a745;
+}
+
+#enviarSolicitud:hover {
+    background-color: #218838;
+}
+
+/* Ajusta el estilo de las celdas del cuerpo de la tabla si es necesario */
+td {
+    text-align: left; /* Mantiene el texto alineado a la izquierda en las celdas del cuerpo */
+    vertical-align: middle; /* Centra el contenido verticalmente */
+    padding: 8px 5px; /* Ajusta el padding si es necesario */
+}
+
+/* Si quieres que la columna de cantidad esté centrada */
+td:nth-child(3) {
+    text-align: center;
+    padding: 5px;
+    vertical-align: middle;
+}
+
+/* Si quieres que la columna de acciones esté centrada */
+td:nth-child(4) {
+    text-align: center;
+    vertical-align: middle;
+}
